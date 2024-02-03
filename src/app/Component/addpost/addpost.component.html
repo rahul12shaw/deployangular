@@ -1,6 +1,8 @@
 <!-- blog-post-form.component.html -->
-<form class="blog-post-form" #blogPostForm="ngForm" (ngSubmit)="onSubmit()" style="text-align:center; background-color: lightgoldenrodyellow;">
-   <h2 style="text-align:center"><b>Upload New Post</b></h2>
+<!-- <div class="ab" style="background-image: url(./assets/j.jpg);"> -->
+    <div class="ab" style="background-color: antiquewhite;">
+<form class="blog-post-form" #blogPostForm="ngForm" (ngSubmit)="onSubmit()" style="text-align:center; background-color: white;">
+   <h2 style="text-align:center"><b>Upload New Blog</b></h2>
     <div class="form-group" >
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" [(ngModel)]="blogPost.title" required>
@@ -30,3 +32,4 @@
         <button routerLink="/posts" style="background-color: red;">Back</button>
     </div>
 </form>
+</div>
