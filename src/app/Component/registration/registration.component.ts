@@ -25,7 +25,7 @@ export class RegistrationComponent {
   };
   private flag: boolean = false;
 
-  constructor(private router: Router, private crudServ: CrudService) {}
+  constructor(private router: Router, private crudServ: CrudService) { }
 
   private isEmailValid(email: string): boolean {
     // Use a more comprehensive email validator
@@ -33,7 +33,7 @@ export class RegistrationComponent {
     return emailPattern.test(email);
   }
 
-  onSubmit(reg:register) {
+  onSubmit(reg: register) {
     if (!this.isEmailValid(this.reg.email)) {
       alert('Invalid email format.');
       return; // Stop further execution if email format is invalid
@@ -45,12 +45,12 @@ export class RegistrationComponent {
         console.log(this.reg);
         this.router.navigateByUrl('/');
         console.log(reg)
-    this.crudServ.registerUser(reg).subscribe(data=>{
-      alert("Registration Successful")
-    },error=>alert("user is not registered")
-    )
+        this.crudServ.registerUser(reg).subscribe(data => {
+          alert("Registration Successful")
+        }, error => alert("user is not registered")
+        )
 
-  }
-}
+      }
+    }
   }
 }
